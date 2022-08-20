@@ -1,0 +1,193 @@
+body {
+    display: flex;
+    justify-content: center;
+    margin: 25px;
+}
+
+.Header {
+    border: 1px Solid grey;
+    border-radius: 9px;
+    height: 90vh;
+    width: 45vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.table1 {
+    /* border: 1px Solid grey; */
+    height: 95%;
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.box1 {
+    /*border: 1px Solid black;*/
+    height: 10%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.box2 {
+    /*border: 1px Solid black;*/
+    font-size: x-large;
+    height: 10%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.box3 {
+    /* border: 1px Solid black; */
+    height: 10%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+}
+
+.fname {
+    border: 1px Solid grey;
+    border-radius: 5px;
+    width: 70%;
+    height: 50%;
+}
+
+.lname {
+    border: 1px Solid grey;
+    border-radius: 5px;
+    width: 70%;
+    height: 50%;
+}
+
+.box4 {
+    /* border: 1px Solid black; */
+    height: 15%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    color: gray;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.box4 input {
+    width: 98%;
+    height: 70%;
+    color: Blue;
+    font-size: medium;
+    border-radius: 7px;
+    border: 1px solid gray;
+}
+
+.box5 {
+    /* border: 1px Solid black; */
+    height: 7%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: rgb(22, 22, 244);
+    font-size: larger;
+}
+
+.box6 {
+    /* border: 1px Solid black; */
+    height: 10%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+}
+
+.pass {
+    border: 1px Solid grey;
+    border-radius: 5px;
+    width: 70%;
+    height: 50%;
+}
+
+.cpass {
+    border: 1px Solid grey;
+    border-radius: 5px;
+    width: 70%;
+    height: 50%;
+}
+
+.box7 {
+    /* border: 1px Solid black; */
+    height: 8%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    font-size: large;
+}
+
+.box8 {
+    /* border: 1px Solid black; */
+    height: 10%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: blue;
+    font-size: large;
+}
+
+.box8 button {
+    border-radius: 5px;
+    border: none;
+    background-color: blue;
+    color: white;
+    font-size: medium;
+    height: 50%;
+    width: 30%;
+
+}
+
+.table2 {
+    /* border: 1px Solid grey; */
+    margin-left: 5px;
+    height: 95%;
+    width: 38%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.tbox1 {
+    /* border: 1px Solid black; */
+    height: 68%;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.tbox2 {
+    /* border: 1px Solid black; */
+    height: 10%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+}
