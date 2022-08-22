@@ -16,7 +16,7 @@ body {
 
 }
 
-.box1 {
+.Signinbox1 {
     /* border: 1px solid black; */
     width: 80%;
     height: 30%;
@@ -52,7 +52,7 @@ body {
     align-items: center;
 }
 
-.box2 {
+.Signinbox2 {
     /* border: 1px solid black; */
     width: 80%;
     height: 70%;
@@ -83,10 +83,19 @@ body {
     width: 100%;
     height: 70%;
     border-radius: 7px;
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
 
 }
+.child8 {
+    /* border: 1px solid black; */
+    width: 100%;
+    height: 20%;
+    display: flex;
+    color: blue;
+    flex-direction: column;
+    justify-content: flex-start;
 
+}
 .child5 {
     /* border: 1px solid black; */
     width: 100%;
@@ -100,9 +109,13 @@ body {
 
 }
 
+
 .child6 a {
+    display: flex;
+    justify-content: flex-start;
     color: blue;
 }
+
 
 .child7 {
     /* border: 1px Solid black; */
