@@ -30,8 +30,8 @@ function TakeNote2() {
             <InsertPhotoOutlinedIcon style={{ cursor: "pointer" }} />
             <ArchiveOutlinedIcon style={{ cursor: "pointer" }} />
             <MoreVertOutlinedIcon style={{ cursor: "pointer" }} />
-            <UndoRoundedIcon />
-            <RedoRoundedIcon />
+            <UndoRoundedIcon style={{ cursor: "pointer" }} />
+            <RedoRoundedIcon style={{ cursor: "pointer" }} />
           </div>
           <div className="close" >
             <button>close</button>
