@@ -3,6 +3,7 @@ import './App.css';
 import Signin from './pages/signin/signin';
 import Signup from './pages/signup/signup';
 import Header from './Components/Header/header';
+import TakeNote1 from './Components/TakeNote1/takenote1';
 
 
 function App() {
@@ -10,7 +11,8 @@ function App() {
     <div className="App">
       {/* <Signin/> */}
       {/* <Signup/> */}
-      <Header />
+      {/* <Header /> */}
+      <TakeNote1/>
     </div>
   );
 }

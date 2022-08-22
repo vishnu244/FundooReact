@@ -22,7 +22,7 @@ function Header() {
                 </div>
                 <div class='icon2'>
                     <SearchIcon />
-                    <input type="text" placeholder="Search" class='searchBar' ></input>
+                    <input type="text" placeholder="Search"  ></input>
                     <Clear />
                 </div>
                 <div class='icon3'>
