@@ -75,7 +75,10 @@ function Signin() {
                             variant="outlined"
                             placeholder='Email or Phone'
                             size="small"
-                            margin="normal"
+                            onChange={takeEmail}
+                            error={regexObj.emailBorder}
+                            helperText={regexObj.emailHelper}
+                            
                         />
                         <a>forgot Email?</a>
                     </div>
@@ -86,7 +89,10 @@ function Signin() {
                             variant="outlined"
                             placeholder='Password'
                             size="small"
-                            margin="normal"
+                            onChange={takePassword}
+                            error={regexObj.passwordBorder}
+                            helperText={regexObj.passwordHelper}
+                            
                         />
                     </div>
                     <div class="child6">

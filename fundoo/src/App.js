@@ -9,8 +9,8 @@ import TakeNote2 from './Components/TakeNote2/takenote2';
 function App() {
   return (
     <div className="App">
-      <Signin/>
-      {/* <Signup/> */}
+      {/* <Signin/> */}
+      <Signup/>
       {/* <Header /> */}
       {/* <TakeNote1/> */}
       {/* <TakeNote2/> */}

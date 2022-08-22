@@ -140,8 +140,9 @@ function Signup() {
                             variant="outlined"
                             placeholder='FirstName'
                             size="small"
-                            margin="normal"
                             onChange={takeFirstName}
+                            error={regexObj.firstNameBorder}
+                            helperText={regexObj.firstNameHelper}
 
                         />
                         <TextField id="outlined-basic"
@@ -149,8 +150,9 @@ function Signup() {
                             variant="outlined"
                             placeholder='LastName'
                             size="small"
-                            margin="normal"
                             onChange={takeLastName}
+                            error={regexObj.lastNameBorder}
+                            helperText={regexObj.lastNameHelper}
                         />
                     </div>
                     <div class="box4">
@@ -161,6 +163,8 @@ function Signup() {
                             size="small"
                             margin="normal"
                             onChange={takeEmail}
+                            error={regexObj.emailBorder}
+                            helperText={regexObj.emailHelper}
                         />
                         You'll need to confirm that this email belongs to you.
                     </div>
@@ -176,6 +180,8 @@ function Signup() {
                             size="small"
                             margin="normal"
                             onChange={takePassword}
+                            error={regexObj.passwordBorder}
+                            helperText={regexObj.passwordHelper}
                         />
                         <TextField id="outlined-basic"
                             type="password"
@@ -185,6 +191,8 @@ function Signup() {
                             size="small"
                             margin="normal"
                             onChange={takeConfirm}
+                            error={regexObj.confirmBorder}
+                            helperText={regexObj.confirmHelper}
                         />
 
                     </div>
