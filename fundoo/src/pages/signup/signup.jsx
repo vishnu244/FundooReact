@@ -9,10 +9,10 @@ import Button from '@mui/material/Button';
 import { signUp } from '../../Services/UserService';
 
 const nameRegex = /^[A-Z]{1}[a-z]{2,}$/;
-// const lastNameRegex = /^[A-Z]{1}[a-z]{2,}$/;
+const lastNameRegex = /^[A-Z]{1}[a-z]{2,}$/;
 const emailRegex = /^[a-zA-Z]+[a-zA-Z0-9]*[- . + _]?[a-zA-Z0-9]+[@]{1}[a-z0-9]+[.]{1}[a-z]+[.]?[a-z]+$/;
 const passwordRegex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&-+=()])([a-zA-Z0-9]*).{8,}$/;
-// const confirmPasswordRegex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&-+=()])([a-zA-Z0-9]*).{8,}$/;
+const confirmPasswordRegex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&-+=()])([a-zA-Z0-9]*).{8,}$/;
 
 
 function Signup() {
@@ -21,15 +21,15 @@ function Signup() {
 
     const [regexObj, setRegexObj] = React.useState({
         nameBorder: false,
-        // lastNameBorder: false,
+        lastNameBorder: false,
         emailBorder: false,
         passwordBorder: false,
-        // confirmBorder: false,
+        confirmBorder: false,
         nameHelper: "",
-        // lastNameHelper: "",
+        lastNameHelper: "",
         emailHelper: "",
         passwordHelper: "",
-        // confirmHelper: "",
+        confirmHelper: "",
     });
 
 
@@ -51,10 +51,10 @@ function Signup() {
 
     const submit = async () => {
         const nameTest = nameRegex.test(signUpObj.name);
-        // const lastNameTest = lastNameRegex.test(signUpObj.lastName);
+        const lastNameTest = lastNameRegex.test(signUpObj.lastName);
         const emailTest = emailRegex.test(signUpObj.email);
         const passwordTest = passwordRegex.test(signUpObj.password);
-        // const confirmTest = confirmPasswordRegex.test(signUpObj.confirm);
+        const confirmTest = confirmPasswordRegex.test(signUpObj.confirm);
         console.log(nameTest, emailTest, passwordTest);
 
 
@@ -71,19 +71,19 @@ function Signup() {
                 nameHelper: "",
             }));
         }
-        // if (lastNameTest === false) {
-        //     setRegexObj((prevState) => ({
-        //         ...prevState,
-        //         lastNameBorder: true,
-        //         lastNameHelper: "Invalid Last Name",
-        //     }));
-        // } else if (lastNameTest === true) {
-        //     setRegexObj((prevState) => ({
-        //         ...prevState,
-        //         nameBorder: false,
-        //         nameHelper: "",
-        //     }));
-        // }
+        if (lastNameTest === false) {
+            setRegexObj((prevState) => ({
+                ...prevState,
+                lastNameBorder: true,
+                lastNameHelper: "Invalid Last Name",
+            }));
+        } else if (lastNameTest === true) {
+            setRegexObj((prevState) => ({
+                ...prevState,
+                nameBorder: false,
+                nameHelper: "",
+            }));
+        }
         if (emailTest === false) {
             setRegexObj((prevState) => ({
                 ...prevState,
@@ -110,21 +110,21 @@ function Signup() {
                 passwordHelper: "",
             }));
         }
-        // if (confirmTest === false) {
-        //     setRegexObj((prevState) => ({
-        //         ...prevState,
-        //         confirmTest: true,
-        //         confirmHelper: "Password and ConfirmPassword must be same",
-        //     }));
-        // } else if (confirmTest === true) {
-        //     setRegexObj((prevState) => ({
-        //         ...prevState,
-        //         confirmTest: false,
-        //         confirmHelper: "",
-        //     }));
-        // }
+        if (confirmTest === false) {
+            setRegexObj((prevState) => ({
+                ...prevState,
+                confirmTest: true,
+                confirmHelper: "Password and ConfirmPassword must be same",
+            }));
+        } else if (confirmTest === true) {
+            setRegexObj((prevState) => ({
+                ...prevState,
+                confirmTest: false,
+                confirmHelper: "",
+            }));
+        }
 
-        if (nameTest === true  && emailTest === true && passwordTest === true )
+        if (nameTest === true && emailTest === true && passwordTest === true )
         {
             let response = await signUp(signUpObj);
             console.log(response);
@@ -199,8 +199,8 @@ function Signup() {
                             size="small"
                             margin="normal"
                             // onChange={takeConfirm}
-                            // error={regexObj.confirmBorder}
-                            // helperText={regexObj.confirmHelper}
+                            error={regexObj.confirmBorder}
+                            helperText={regexObj.confirmHelper}
                         />
 
                     </div>
