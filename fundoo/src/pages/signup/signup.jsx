@@ -6,82 +6,84 @@ import './signup.css'
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
-const firstNameRegex = /^[A-Z]{1}[a-z]{2,}$/;
-const lastNameRegex = /^[A-Z]{1}[a-z]{2,}$/;
+import { signUp } from '../../Services/UserService';
+
+const nameRegex = /^[A-Z]{1}[a-z]{2,}$/;
+// const lastNameRegex = /^[A-Z]{1}[a-z]{2,}$/;
 const emailRegex = /^[a-zA-Z]+[a-zA-Z0-9]*[- . + _]?[a-zA-Z0-9]+[@]{1}[a-z0-9]+[.]{1}[a-z]+[.]?[a-z]+$/;
 const passwordRegex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&-+=()])([a-zA-Z0-9]*).{8,}$/;
-const confirmPasswordRegex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&-+=()])([a-zA-Z0-9]*).{8,}$/;
+// const confirmPasswordRegex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&-+=()])([a-zA-Z0-9]*).{8,}$/;
 
 
 function Signup() {
 
-    const [signUpObj, setSignUpObj] = React.useState({ firstName: "", lastName: "", email: "", password: "", confirm: "" });
+    const [signUpObj, setSignUpObj] = React.useState({ name: "", email: "", password: "" });
 
     const [regexObj, setRegexObj] = React.useState({
-        firstNameBorder: false,
-        lastNameBorder: false,
+        nameBorder: false,
+        // lastNameBorder: false,
         emailBorder: false,
         passwordBorder: false,
-        confirmBorder: false,
-        firstNameHelper: "",
-        lastNameHelper: "",
+        // confirmBorder: false,
+        nameHelper: "",
+        // lastNameHelper: "",
         emailHelper: "",
         passwordHelper: "",
-        confirmHelper: "",
+        // confirmHelper: "",
     });
 
 
-    const takeFirstName = (event) => {
-        setSignUpObj((prevState) => ({ ...prevState, firstName: event.target.value }))
+    const takename = (event) => {
+        setSignUpObj((prevState) => ({ ...prevState, name: event.target.value }))
     }
-    const takeLastName = (event) => {
-        setSignUpObj((prevState) => ({ ...prevState, lastName: event.target.value }))
-    }
+    // const takeLastName = (event) => {
+    //     setSignUpObj((prevState) => ({ ...prevState, lastName: event.target.value }))
+    // }
     const takeEmail = (event) => {
         setSignUpObj((prevState) => ({ ...prevState, email: event.target.value }))
     }
     const takePassword = (event) => {
         setSignUpObj((prevState) => ({ ...prevState, password: event.target.value }))
     }
-    const takeConfirm = (event) => {
-        setSignUpObj((prevState) => ({ ...prevState, confirm: event.target.value }))
-    }
+    // const takeConfirm = (event) => {
+    //     setSignUpObj((prevState) => ({ ...prevState, confirm: event.target.value }))
+    // }
 
-    const submit = () => {
-        const firstNameTest = firstNameRegex.test(signUpObj.firstName);
-        const lastNameTest = firstNameRegex.test(signUpObj.lastName);
-        const emailTest = firstNameRegex.test(signUpObj.email);
-        const passwordTest = firstNameRegex.test(signUpObj.password);
-        const confirmTest = firstNameRegex.test(signUpObj.confirm);
-        console.log(firstNameTest, lastNameTest, emailTest, passwordTest, confirmTest);
+    const submit = async () => {
+        const nameTest = nameRegex.test(signUpObj.name);
+        // const lastNameTest = lastNameRegex.test(signUpObj.lastName);
+        const emailTest = emailRegex.test(signUpObj.email);
+        const passwordTest = passwordRegex.test(signUpObj.password);
+        // const confirmTest = confirmPasswordRegex.test(signUpObj.confirm);
+        console.log(nameTest, emailTest, passwordTest);
 
 
-        if (firstNameTest === false) {
+        if (nameTest === false) {
             setRegexObj((prevState) => ({
                 ...prevState,
-                firstNameBorder: true,
-                firstNameHelper: "Invalid First Name",
+                nameBorder: true,
+                nameHelper: "Invalid First Name",
             }));
-        } else if (firstNameTest === true) {
+        } else if (nameTest === true) {
             setRegexObj((prevState) => ({
                 ...prevState,
-                firstNameBorder: false,
-                firstNameHelper: "",
+                nameBorder: false,
+                nameHelper: "",
             }));
         }
-        if (lastNameTest === false) {
-            setRegexObj((prevState) => ({
-                ...prevState,
-                lastNameBorder: true,
-                lastNameHelper: "Invalid Last Name",
-            }));
-        } else if (lastNameTest === true) {
-            setRegexObj((prevState) => ({
-                ...prevState,
-                firstNameBorder: false,
-                firstNameHelper: "",
-            }));
-        }
+        // if (lastNameTest === false) {
+        //     setRegexObj((prevState) => ({
+        //         ...prevState,
+        //         lastNameBorder: true,
+        //         lastNameHelper: "Invalid Last Name",
+        //     }));
+        // } else if (lastNameTest === true) {
+        //     setRegexObj((prevState) => ({
+        //         ...prevState,
+        //         nameBorder: false,
+        //         nameHelper: "",
+        //     }));
+        // }
         if (emailTest === false) {
             setRegexObj((prevState) => ({
                 ...prevState,
@@ -108,18 +110,24 @@ function Signup() {
                 passwordHelper: "",
             }));
         }
-        if (confirmTest === false) {
-            setRegexObj((prevState) => ({
-                ...prevState,
-                confirmTest: true,
-                confirmHelper: "Password and ConfirmPassword must be same",
-            }));
-        } else if (confirmTest === true) {
-            setRegexObj((prevState) => ({
-                ...prevState,
-                confirmTest: false,
-                confirmHelper: "",
-            }));
+        // if (confirmTest === false) {
+        //     setRegexObj((prevState) => ({
+        //         ...prevState,
+        //         confirmTest: true,
+        //         confirmHelper: "Password and ConfirmPassword must be same",
+        //     }));
+        // } else if (confirmTest === true) {
+        //     setRegexObj((prevState) => ({
+        //         ...prevState,
+        //         confirmTest: false,
+        //         confirmHelper: "",
+        //     }));
+        // }
+
+        if (nameTest === true  && emailTest === true && passwordTest === true )
+        {
+            let response = await signUp(signUpObj);
+            console.log(response);
         }
     };
 
@@ -136,13 +144,13 @@ function Signup() {
                     </div>
                     <div class="box3">
                         <TextField id="outlined-basic"
-                            label="FirstName"
+                            label="name"
                             variant="outlined"
-                            placeholder='FirstName'
+                            placeholder='name'
                             size="small"
-                            onChange={takeFirstName}
-                            error={regexObj.firstNameBorder}
-                            helperText={regexObj.firstNameHelper}
+                            onChange={takename}
+                            error={regexObj.nameBorder}
+                            helperText={regexObj.nameHelper}
 
                         />
                         <TextField id="outlined-basic"
@@ -150,9 +158,9 @@ function Signup() {
                             variant="outlined"
                             placeholder='LastName'
                             size="small"
-                            onChange={takeLastName}
-                            error={regexObj.lastNameBorder}
-                            helperText={regexObj.lastNameHelper}
+                            // onChange={takeLastName}
+                            // error={regexObj.lastNameBorder}
+                            // helperText={regexObj.lastNameHelper}
                         />
                     </div>
                     <div class="box4">
@@ -190,9 +198,9 @@ function Signup() {
                             placeholder='ConfirmPassword'
                             size="small"
                             margin="normal"
-                            onChange={takeConfirm}
-                            error={regexObj.confirmBorder}
-                            helperText={regexObj.confirmHelper}
+                            // onChange={takeConfirm}
+                            // error={regexObj.confirmBorder}
+                            // helperText={regexObj.confirmHelper}
                         />
 
                     </div>

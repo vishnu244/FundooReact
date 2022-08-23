@@ -12,8 +12,8 @@ function App() {
       {/* <Signin/> */}
       <Signup/>
       {/* <Header /> */}
-      {/* <TakeNote1/> */}
-      {/* <TakeNote2/> */}
+      {/* <TakeNote1/>
+      <TakeNote2/> */}
   
     </div>
   );

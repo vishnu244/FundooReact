@@ -5,6 +5,7 @@ import './signin.css'
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
+import { signIn } from '../../Services/UserService';
 
 const emailRegex = /^[a-zA-Z]+[a-zA-Z0-9]*[- . + _]?[a-zA-Z0-9]+[@]{1}[a-z0-9]+[.]{1}[a-z]+[.]?[a-z]+$/;
 const passwordRegex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&-+=()])([a-zA-Z0-9]*).{8,}$/;
@@ -27,7 +28,7 @@ function Signin() {
         setSignInObj((prevState) => ({ ...prevState, password: event.target.value }));
     };
 
-    const submit = () => {
+    const submit = async () => {
         const emailTest = emailRegex.test(signInObj.email);
         const passwordTest = passwordRegex.test(signInObj.password);
         console.log(emailTest,passwordTest);
@@ -57,6 +58,12 @@ function Signin() {
                 passwordBorder: false,
                 passwordHelper: "",
             }));
+        }
+
+        if (emailTest === true && passwordTest === true)
+        {
+            let response = await signIn(signInObj);
+            console.log(response)
         }
     };
 
