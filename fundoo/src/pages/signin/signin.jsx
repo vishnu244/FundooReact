@@ -63,7 +63,8 @@ function Signin() {
         if (emailTest === true && passwordTest === true)
         {
             let response = await signIn(signInObj);
-            console.log(response)
+            // console.log(response)
+            localStorage.setItem( "token",response?.data?.data)
         }
     };
 
@@ -89,7 +90,7 @@ function Signin() {
                         />
                         <a>forgot Email?</a>
                     </div>
-                    <div class="child8">
+                    <div class="child5">
                         <TextField id="outlined-basic"
                             type="password"
                             label="Password"
@@ -103,7 +104,7 @@ function Signin() {
                         />
                     </div>
                     <div class="child6">
-                        Not your computer? Use Guest mode to sign in privately  <br />
+                        Not your computer? Use Guest mode to sign in privately <br />
                         <a href=" " >Learn More</a>
                     </div>
                     <div class="child7">

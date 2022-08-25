@@ -1,18 +1,17 @@
-.Note2Container {
+
+.Note3Container {
     border: 1px solid grey;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    height: 25vh;
-    width: 50vw;
+    height: 30vh;
+    width: 20vw;
     box-shadow: 2px 2px 2px 2px rgb(233, 232, 232);
     border-radius: 9px;
-    margin-top: 8vh;
-    margin-left: 20%;
+    margin: 10% 10% 0% 10%;    
 }
-
-.Note2Title {
+.Note3Title {
     /* border: 1px solid black; */
     display: flex;
     flex-direction: row;
@@ -22,7 +21,7 @@
     width: 100%;
 }
 
-.Note2Title input {
+.Note3Title input {
     width: 80%;
     height: 80%;
     border-radius: 7px;
@@ -31,26 +30,29 @@
     font-size: medium;
 }
 
-.Note2Text {
+.Note3Text {
     /* border: 1px solid black; */
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
     height: 30%;
-    width: 92%;
+    width: 80%;
 }
-
-.Note2Text textarea {
-    width: 100%;
+.Note3Text textarea {
+    width: 94%;
     height: 80%;
     border-radius: 7px;
     /* border: 1px solid gray; */
     border-color: transparent;
     font-size: large;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
 }
 
-.Note2footer {
+.Note3footer {
     /* border: 1px solid black; */
     display: flex;
     flex-direction: row;
@@ -58,33 +60,4 @@
     align-items: center;
     height: 30%;
     width: 100%;
-}
-
-.notes2icons {
-    /* border: 1px solid black; */
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    height: 90%;
-    width: 70%;
-    /* cursor: pointer; */
-}
-
-.close {
-    /* border: 1px solid black; */
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    height: 90%;
-    width: 20%;
-}
-
-.close button {
-    height: 70%;
-    width: 60%;
-    border: none;
-    background-color: white;
-    cursor: pointer;
 }

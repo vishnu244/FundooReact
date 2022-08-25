@@ -6,6 +6,10 @@ import './signup.css'
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
+import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+
 import { signUp } from '../../Services/UserService';
 
 const nameRegex = /^[A-Z]{1}[a-z]{2,}$/;
@@ -205,8 +209,7 @@ function Signup() {
 
                     </div>
                     <div class="box7">
-                        <input type="checkbox" />
-                        Show password
+                        <FormControlLabel control={<Checkbox defaultChecked />} label="Show password" />
                     </div>
                     <div class="box8">
                         <div class="Sin">Sign in instead </div>

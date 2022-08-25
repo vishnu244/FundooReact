@@ -20,7 +20,7 @@ function TakeNote2() {
           <PushPinOutlinedIcon style={{ width: "33px", height: "28px", color: "black", cursor: "pointer" }} />
         </div>
         <div className="Note2Text">
-          <input type="text" placeholder="Take a note..." />
+          <textarea placeholder="Take a note..."></textarea>
         </div>
         <div className="Note2footer">
           <div className="notes2icons">
