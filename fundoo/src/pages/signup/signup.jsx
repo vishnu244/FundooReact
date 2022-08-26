@@ -128,8 +128,7 @@ function Signup() {
             }));
         }
 
-        if (nameTest === true && emailTest === true && passwordTest === true )
-        {
+        if (nameTest === true && emailTest === true && passwordTest === true) {
             let response = await signUp(signUpObj);
             console.log(response);
         }
@@ -146,26 +145,30 @@ function Signup() {
                     <div class="box2">
                         Create your Google Account
                     </div>
+                    <div class = "box3 main">
                     <div class="box3">
                         <TextField id="outlined-basic"
-                            label="name"
+                            label="FirstName"
                             variant="outlined"
-                            placeholder='name'
+                            placeholder='FirstName'
                             size="small"
                             onChange={takename}
                             error={regexObj.nameBorder}
                             helperText={regexObj.nameHelper}
 
                         />
+                    </div>
+                    <div class="box3">
                         <TextField id="outlined-basic"
                             label="LastName"
                             variant="outlined"
                             placeholder='LastName'
                             size="small"
-                            // onChange={takeLastName}
-                            // error={regexObj.lastNameBorder}
-                            // helperText={regexObj.lastNameHelper}
+                        // onChange={takeLastName}
+                        // error={regexObj.lastNameBorder}
+                        // helperText={regexObj.lastNameHelper}
                         />
+                    </div>
                     </div>
                     <div class="box4">
                         <TextField id="outlined-basic"
@@ -173,7 +176,7 @@ function Signup() {
                             variant="outlined"
                             placeholder='Email or UserName'
                             size="small"
-                            margin="normal"
+                            // margin="normal"
                             onChange={takeEmail}
                             error={regexObj.emailBorder}
                             helperText={regexObj.emailHelper}
@@ -183,30 +186,34 @@ function Signup() {
                     <div class="box5">
                         Create a new Gmail address instead
                     </div>
+                    <div class="box6 main">
                     <div class="box6">
                         <TextField id="outlined-basic"
-                            type="password"
+                            // type="password"
                             label="Password"
                             variant="outlined"
                             placeholder='Password'
                             size="small"
-                            margin="normal"
+                            // margin="normal"
                             onChange={takePassword}
                             error={regexObj.passwordBorder}
                             helperText={regexObj.passwordHelper}
                         />
+                        </div>
+                        <div class="box6">
                         <TextField id="outlined-basic"
-                            type="password"
+                            // type="password"
                             label="Confirm"
                             variant="outlined"
                             placeholder='ConfirmPassword'
                             size="small"
-                            margin="normal"
+                            // margin="normal"
                             // onChange={takeConfirm}
                             error={regexObj.confirmBorder}
                             helperText={regexObj.confirmHelper}
                         />
-
+                    
+                    </div>
                     </div>
                     <div class="box7">
                         <FormControlLabel control={<Checkbox defaultChecked />} label="Show password" />

@@ -19,13 +19,12 @@ function TakeNote3(props) {
                         {props.note.title}
                     </div>
                     {/* <input type="text" placeholder="Title" /> */}
-                    <PushPinOutlinedIcon style={{ width: "33px", height: "33px", color: "black", cursor: "pointer" }} />
+                    <PushPinOutlinedIcon style={{ width: "25px", height: "25px", color: "black", cursor: "pointer" }} />
                 </div>
                 <div class="Note3Text">
-                    <div>
-                        {props.note.description}
-                        
-                    </div>
+                    
+                        {props.note.description}                        
+                    
                     {/* <textarea placeholder='Take a note'></textarea> */}
                 </div>
                 <div class="Note3footer">

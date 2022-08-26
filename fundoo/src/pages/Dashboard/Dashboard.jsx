@@ -31,10 +31,6 @@ function Dashboard() {
         }
 
       </div>
-
-
-      {/* <TakeNote1 />
-        <TakeNote2 /> */}
     </div>
   )
 }
