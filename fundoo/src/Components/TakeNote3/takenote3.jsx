@@ -22,9 +22,7 @@ function TakeNote3(props) {
                     <PushPinOutlinedIcon style={{ width: "25px", height: "25px", color: "black", cursor: "pointer" }} />
                 </div>
                 <div class="Note3Text">
-                    
                         {props.note.description}                        
-                    
                     {/* <textarea placeholder='Take a note'></textarea> */}
                 </div>
                 <div class="Note3footer">

@@ -1,5 +1,3 @@
-
-
 .Note3Container {
     border: 1px solid grey;
     display: flex;
@@ -12,6 +10,7 @@
     border-radius: 9px;
     /* margin: 10% 10% 0% 10%;     */
 }
+
 .Note3Title {
     /* border: 1px solid black; */
     display: flex;
@@ -40,6 +39,7 @@
     height: 56%;
     width: 90%;
 }
+
 /* .Note3Text textarea {
     width: 94%;
     height: 80%;
