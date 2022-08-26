@@ -23,6 +23,7 @@
 .keeptext {
     font-size: x-large;
     color: rgb(105, 97, 97);
+    
 }
 
 .icon2 {
@@ -65,3 +66,16 @@
     justify-content: space-around;
     align-items: center;
 }
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    .srh{
+        width: '5%',
+            
+    }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .srh{
+        width: '5%',
+            
+    }
+}
+

@@ -1,0 +1,11 @@
+.NotesArray{
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 80vw;
+    flex-flow: row wrap;
+    gap: 2rem;
+    margin-top: 15vh;
+    margin-left: 10%;
+}

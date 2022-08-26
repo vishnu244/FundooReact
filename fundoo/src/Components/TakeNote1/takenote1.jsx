@@ -5,9 +5,9 @@ import CheckBoxOutlinedIcon from '@mui/icons-material/CheckBoxOutlined';
 import BrushOutlinedIcon from '@mui/icons-material/BrushOutlined';
 import ImageOutlinedIcon from '@mui/icons-material/ImageOutlined';
 
-function TakeNote1() {
+function TakeNote1(props) {
     return (
-        <div >
+        <div onClick={() => props.listenToTakeNote1()} >
             <div class="Note1Container">
                 <div class="Note1Text">
                     <input type="text" placeholder="Take a note..."  ></input>

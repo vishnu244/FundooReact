@@ -8,7 +8,7 @@ body {
     border: 1px Solid grey;
     border-radius: 9px;
     height: 90vh;
-    width: 45vw;
+    width: 60vw;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -26,8 +26,9 @@ body {
 }
 
 .box1 {
-    /*border: 1px Solid black;*/
-    height: 10%;
+    /* border: 1px Solid black; */
+    border: none;
+    height: 8%;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -38,7 +39,7 @@ body {
 .box2 {
     /*border: 1px Solid black;*/
     font-size: x-large;
-    height: 10%;
+    height: 8%;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -53,22 +54,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    align-items: center;
     gap: 20px;
-}
-
-.fname {
-    border: 1px Solid grey;
-    border-radius: 5px;
-    width: 70%;
-    height: 50%;
-}
-
-.lname {
-    border: 1px Solid grey;
-    border-radius: 5px;
-    width: 70%;
-    height: 50%;
 }
 
 .box4 {
@@ -79,16 +65,6 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     color: gray;
-    font-family: 'Times New Roman', Times, serif;
-}
-
-.box4 input {
-    width: 98%;
-    height: 70%;
-    color: Blue;
-    font-size: medium;
-    border-radius: 7px;
-    border: 1px solid gray;
 }
 
 .box5 {
@@ -99,7 +75,7 @@ body {
     justify-content: flex-start;
     align-items: center;
     color: rgb(22, 22, 244);
-    font-size: larger;
+    font-size: small;
 }
 
 .box6 {
@@ -109,22 +85,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    align-items: center;
     gap: 20px;
-}
-
-.pass {
-    border: 1px Solid grey;
-    border-radius: 5px;
-    width: 70%;
-    height: 50%;
-}
-
-.cpass {
-    border: 1px Solid grey;
-    border-radius: 5px;
-    width: 70%;
-    height: 50%;
 }
 
 .box7 {
@@ -150,17 +111,6 @@ body {
     font-size: large;
 }
 
-.box8 button {
-    border-radius: 5px;
-    border: none;
-    background-color: blue;
-    color: white;
-    font-size: medium;
-    height: 50%;
-    width: 30%;
-
-}
-
 .table2 {
     /* border: 1px Solid grey; */
     margin-left: 5px;
@@ -181,6 +131,14 @@ body {
     align-items: flex-end;
 }
 
+.tbox1 img {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
 .tbox2 {
     /* border: 1px Solid black; */
     height: 10%;
@@ -189,5 +147,51 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    .Header {
+        width: 90vw;
+        height: 120vh;
+        border: none;
+    }
+
+    .table1 {
+        width: 100%;
+    }
+
+    .box3 {
+        /* border: 1px solid black; */
+        display: flex;
+        flex-direction: column;
+        height: 20%;
+    }
+
+    .box6 {
+        /* border: 1px solid black; */
+        display: flex;
+        flex-direction: column;
+        height: 20%;
+    }
+
+    .table2 {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .Header {
+        width: 60vw;
+        height: 120vh;
+    }
+
+    .table1 {
+        width: 100%;
+        padding: 5%;
+    }
+
+    .table2 {
+        display: none;
+    }
 
 }
