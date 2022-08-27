@@ -7,11 +7,15 @@ import Button from '@mui/material/Button';
 
 import { signIn } from '../../Services/UserService';
 
+import {useNavigate}  from 'react-router-dom'
+
 const emailRegex = /^[a-zA-Z]+[a-zA-Z0-9]*[- . + _]?[a-zA-Z0-9]+[@]{1}[a-z0-9]+[.]{1}[a-z]+[.]?[a-z]+$/;
 const passwordRegex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&-+=()])([a-zA-Z0-9]*).{8,}$/;
 
 
 function Signin() {
+
+    const navigate = useNavigate()
 
     const [signInObj, setSignInObj] = React.useState({ email: "", password: "" });
     const [regexObj, setRegExObj] = React.useState({
@@ -63,10 +67,13 @@ function Signin() {
         if (emailTest === true && passwordTest === true)
         {
             let response = await signIn(signInObj);
+            navigate ('/Dashboard')
             // console.log(response)
             localStorage.setItem( "token",response?.data?.data)
         }
     };
+
+
 
     return (
         <div>

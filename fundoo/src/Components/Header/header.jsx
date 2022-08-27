@@ -56,12 +56,16 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 
-function Header() {
+
+
+function Header(props) {
+
+    const handleDrawer = () => {props.listenToHeader()} 
     return (
         <div >
             <div class='headerContainer'>
                 <div class='icon1'>
-                    <div><DehazeOutlinedIcon /> </div>
+                    <div><DehazeOutlinedIcon onClick={handleDrawer} /> </div>
                     <img src={keepheader} style={{ width: "33px", height: "33px", flexDirection: "row" }} />
                     <div class="keeptext">Keep</div>
                 </div>
