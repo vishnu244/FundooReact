@@ -1,6 +1,6 @@
 import React from 'react'
 import './takenote2.css'
-
+import ColorPopper from '../ColorPopper/ColorPopper';
 import AddAlertOutlinedIcon from '@mui/icons-material/AddAlertOutlined'
 import PersonAddAltOutlinedIcon from '@mui/icons-material/PersonAddAltOutlined';
 import PaletteOutlinedIcon from '@mui/icons-material/PaletteOutlined';
@@ -10,31 +10,54 @@ import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined';
 import UndoRoundedIcon from '@mui/icons-material/UndoRounded';
 import RedoRoundedIcon from '@mui/icons-material/RedoRounded';
 import PushPinOutlinedIcon from '@mui/icons-material/PushPinOutlined';
+import { addNote } from '../../Services/DataService';
 
 function TakeNote2() {
+  const [ noteObj,  setNoteObj ] = React.useState({Title:" ", Description:" ",color:" ", archive:false})
+  const takeTitle = (event) => {
+    setNoteObj((prevState) => ({ ...prevState, Title: event.target.value }));
+
+  }
+  const takeDescription = (event) => {
+    setNoteObj((prevState) => ({ ...prevState, Description: event.target.value }));
+  }
+
+  const ListenToPopper = (color) => {
+    setNoteObj((prevState) => ({ ...prevState, color: color}));
+
+  }
+  const onclose = async () => {
+    let response = await addNote(noteObj);
+    console.log(response)
+  }
+
+  const handleArchhive = () => {
+    setNoteObj((prevState) => ({ ...prevState, archive: true}));
+  }
   return (
     <div>
-      <div class="Note2Container" >
+      <div class="Note2Container" style = {{backgroundColor : noteObj.color}}>
         <div className="Note2Title">
-          <input type="text" placeholder="Title" />
+          <input style = {{backgroundColor : noteObj.color}} placeholder="Title" onChange={takeTitle} />
           <PushPinOutlinedIcon style={{ width: "33px", height: "28px", color: "black", cursor: "pointer" }} />
         </div>
         <div className="Note2Text">
-          <textarea placeholder="Take a note..."></textarea>
+          <textarea style = {{backgroundColor : noteObj.color}} placeholder="Take a note..." onChange={takeDescription}></textarea>
         </div>
         <div className="Note2footer">
           <div className="notes2icons">
             <AddAlertOutlinedIcon style={{ cursor: "pointer" }} />
             <PersonAddAltOutlinedIcon style={{ cursor: "pointer" }} />
-            <PaletteOutlinedIcon style={{ cursor: "pointer" }} />
+            {/* <PaletteOutlinedIcon style={{ cursor: "pointer" }} /> */}
+            <ColorPopper action = "create" ListenToPopper = {ListenToPopper} />
             <InsertPhotoOutlinedIcon style={{ cursor: "pointer" }} />
-            <ArchiveOutlinedIcon style={{ cursor: "pointer" }} />
+            <ArchiveOutlinedIcon style={{ cursor: "pointer" }} onClick={handleArchhive}/>
             <MoreVertOutlinedIcon style={{ cursor: "pointer" }} />
             <UndoRoundedIcon style={{ cursor: "pointer" }} />
             <RedoRoundedIcon style={{ cursor: "pointer" }} />
           </div>
           <div className="close" >
-            <button>close</button>
+            <button onClick={onclose} style = {{backgroundColor : noteObj.color}}>close</button>
           </div>
         </div>
       </div>

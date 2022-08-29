@@ -3,27 +3,24 @@ import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import MuiDrawer from '@mui/material/Drawer';
 import MuiAppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
 import CssBaseline from '@mui/material/CssBaseline';
-import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
+
+import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbOutlined';
+import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
+import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
+import ArchiveOutlinedIcon from '@mui/icons-material/ArchiveOutlined';
+import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
     width: drawerWidth,
-    marginTop: 70,
+    marginTop: "10vh",
     transition: theme.transitions.create('width', {
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.enteringScreen,
@@ -109,15 +106,33 @@ export default function MiniDrawer(props) {
                 <List>
                     <ListItem button >
                         <ListItemIcon>
-                            <img src="https://img.icons8.com/material-outlined/24/000000/light.png" style={{ width: "20px" }} />
+                            <LightbulbOutlinedIcon  style={{ cursor: "pointer" }} />
                         </ListItemIcon>
                         <ListItemText primary="Notes" />
                     </ListItem>
                     <ListItem button >
                         <ListItemIcon>
-                            <img src="https://img.icons8.com/material-outlined/24/000000/light.png" style={{ width: "20px" }} />
+                            <NotificationsNoneIcon style={{ cursor: "pointer" }}/>
                         </ListItemIcon>
-                        <ListItemText primary="Notes" />
+                        <ListItemText primary="Reminders" />
+                    </ListItem>
+                    <ListItem button >
+                        <ListItemIcon>
+                            <EditOutlinedIcon style={{ cursor: "pointer" }}/>
+                        </ListItemIcon>
+                        <ListItemText primary="Edit Labels" />
+                    </ListItem>
+                    <ListItem button >
+                        <ListItemIcon>
+                            <ArchiveOutlinedIcon style={{ cursor: "pointer" }}/>
+                        </ListItemIcon>
+                        <ListItemText primary="Archive" />
+                    </ListItem>
+                    <ListItem button >
+                        <ListItemIcon>
+                            <DeleteOutlineOutlinedIcon style={{ cursor: "pointer" }}/>
+                        </ListItemIcon>
+                        <ListItemText primary="Trash" />
                     </ListItem>
 
                 </List>

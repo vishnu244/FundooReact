@@ -2,11 +2,15 @@
     border: 1px solid grey;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     height: 10vh;
     width: 100vw;
     /* margin-top: 0px; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
 }
 
 .icon1 {
@@ -23,7 +27,7 @@
 .keeptext {
     font-size: x-large;
     color: rgb(105, 97, 97);
-    
+
 }
 
 .icon2 {
@@ -66,16 +70,17 @@
     justify-content: space-around;
     align-items: center;
 }
+
 @media screen and (min-width: 320px) and (max-width: 480px) {
-    .srh{
+    .srh {
         width: '5%',
-            
-    }
-}
-@media screen and (min-width: 481px) and (max-width: 768px) {
-    .srh{
-        width: '5%',
-            
+
     }
 }
 
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .srh {
+        width: '5%',
+
+    }
+}

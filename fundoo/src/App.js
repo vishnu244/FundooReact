@@ -18,8 +18,8 @@ function App() {
       {/* <TakeNote1/> */}
       {/* <TakeNote2/> */}
       {/* <TakeNote3 /> */}
-      {/* <Dashboard /> */}
-      <RouterComponent />
+      <Dashboard />
+      {/* <RouterComponent /> */}
 
   
     </div>
