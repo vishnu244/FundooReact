@@ -4,6 +4,7 @@ import Popper from '@mui/material/Popper';
 
 import PaletteOutlinedIcon from '@mui/icons-material/PaletteOutlined';
 import { create } from '@mui/material/styles/createTransitions';
+import { addColor } from '../../Services/DataService';
 
 
 export default function ColorPopper(props) {
@@ -18,15 +19,18 @@ export default function ColorPopper(props) {
         } else if (props.action === "update") {
             // props.ListenToPopper(color)
             let data = {id : props.id, color:color}
+            addColor(data).then((response) => {console.log(response)})
+            .catch ((error) => console.log(error))
 
         }
+
     }
 
     const open = Boolean(anchorEl);
     const id = open ? 'simple-popper' : undefined;
 
-    const colors = ["#2ECC71", "#AF7AC5", "#F1948A", "#A3E4D7", "#F5B7B1", "#F5B041", "#DC7633", "#F1C40F", "#AAB7B8", "#F1948A", "#2ECC71", "#F5B041"]
-
+    const colors = ["green", "blue", "yellow", "grey", "purple", "brown", "orange", "pink", "black", "silver", "teal", "white"]
+    
     return (
         <div>
             <PaletteOutlinedIcon style={{ cursor: "pointer" }} onClick={handleClick} />

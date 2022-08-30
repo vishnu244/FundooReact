@@ -11,6 +11,11 @@ export const getNotes = () => {
     return response;
 }
 
+export const addColor = (colorNotesObj) => {
+    let response = axios.post('http://127.0.0.1:8000/api/colorNoteById', colorNotesObj, header);
+    return response;
+}
+
 export const addNote = (takeNote2Obj) => {
     let response = axios.post('http://127.0.0.1:8000/api/Notes', takeNote2Obj, header);
     return response;
