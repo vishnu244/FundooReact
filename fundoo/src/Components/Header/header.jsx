@@ -11,73 +11,25 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
+import { connect } from 'react-redux';
 
 
-const Search = styled('div')(({ theme }) => ({
-    position: 'relative',
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: alpha(theme.palette.common.white, 0.15),
-    '&:hover': {
-        backgroundColor: alpha(theme.palette.common.white, 0.25),
-    },
-    marginLeft: 0,
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-        marginLeft: theme.spacing(1),
-        width: 'auto',
-    },
-}));
-
-const SearchIconWrapper = styled('div')(({ theme }) => ({
-    padding: theme.spacing(0, 2),
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-}));
-
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-    color: 'inherit',
-    '& .MuiInputBase-input': {
-        // padding: theme.spacing(1, 1, 1, 0),
-        // vertical padding + font size from searchIcon
-        paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-        // transition: theme.transitions.create('width'),
-        // width: '100%',
-        [theme.breakpoints.up('sm')]: {
-            width: '35ch',
-            '&:focus': {
-                width: '40ch',
-            },
-        },
-    },
-}));
+function Header(props) {
 
 
-function Header() {
+    
+    const handleDrawer = () => {props.listenToHeader()} 
     return (
         <div >
             <div class='headerContainer'>
                 <div class='icon1'>
-                    <div><DehazeOutlinedIcon /> </div>
+                    <div><DehazeOutlinedIcon onClick={handleDrawer} /> </div>
                     <img src={keepheader} style={{ width: "33px", height: "33px", flexDirection: "row" }} />
-                    <div class="keeptext">Keep</div>
+                    <div class="keeptext">{props.title}</div>
                 </div>
                 <div class='icon2'>
-                    <Search>
-                        <SearchIconWrapper>
-                            <SearchIcon />
-                        </SearchIconWrapper>
-                        <StyledInputBase 
-                            placeholder="Search…"
-                            inputProps={{ 'aria-label': 'search' }}
-                        />
-                    </Search>
-
-                    {/* <SearchIcon /> */}
-                    {/* <input type="text" placeholder="Search..."  ></input> */}
+                    <SearchIcon />
+                    <input type="text" placeholder="Search..."  ></input>
                     <Clear />
                 </div>
                 <div class='icon3'>
@@ -91,6 +43,15 @@ function Header() {
             </div>
         </div>
     )
-}
 
-export default Header
+    
+}
+const mapStateToProps = (state) => {
+    console.log(state)
+	return {
+		title: state.drawerReducer.title,
+	};
+};
+
+//export default Header
+export default connect(mapStateToProps)(Header);

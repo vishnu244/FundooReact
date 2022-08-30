@@ -20,3 +20,8 @@ export const updateNotes = (updateNotesObj) => {
     let response = axios.post('http://127.0.0.1:8000/api/updateNotes/{id}', updateNotesObj, header);
     return response;
 }
+
+export const archiveNotes = (archiveNotesObj) => {
+    let response = axios.post('http://127.0.0.1:8000/api/ArchieveNotesById', archiveNotesObj, header);
+    return response;
+}

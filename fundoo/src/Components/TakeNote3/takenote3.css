@@ -21,37 +21,13 @@
     width: 90%;
 }
 
-/* .Note3Title input {
-    width: 80%;
-    height: 80%;
-    border-radius: 7px;
-    border: 1px solid gray;
-    border-color: transparent;
-    font-size: medium;
-} */
-
 .Note3Text {
     /* border: 1px solid black; */
     display: flex;
-    /* flex-direction: row; */
     justify-content: flex-start;
-    /* align-items: center; */
     height: 56%;
     width: 90%;
 }
-
-/* .Note3Text textarea {
-    width: 94%;
-    height: 80%;
-    border-radius: 7px;
-    border: 1px solid gray;
-    border-color: transparent;
-    font-size: large;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-} */
 
 .Note3footer {
     /* border: 1px solid black; */

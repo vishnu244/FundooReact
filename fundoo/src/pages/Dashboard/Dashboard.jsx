@@ -6,10 +6,13 @@ import TakeNote3 from '../../Components/TakeNote3/takenote3'
 
 import './Dashboard.css'
 import { getNotes } from '../../Services/DataService'
+import MiniDrawer from '../../Components/Drawer/Drawer'
 
 function Dashboard() {
   const [view, setview] = useState(true)
   const [notes, setNotes] = useState([])
+  const [drawer, setDrawer] = useState(false)
+
   const notesarray = notes.map(note => (<TakeNote3 note={note} />))
 
   useEffect(() => {
@@ -19,9 +22,15 @@ function Dashboard() {
   function listenToTakeNote1() {
     setview(false)
   }
+
+  const listenToHeader = () => {
+    setDrawer (!drawer)
+  }
+
   return (
     <div>
-      <Header />
+      <Header listenToHeader= {listenToHeader} />
+      <MiniDrawer  drawer = {drawer}/>
       {
         view ? <TakeNote1 listenToTakeNote1={listenToTakeNote1} /> : <TakeNote2 />
       }
@@ -29,7 +38,7 @@ function Dashboard() {
         {
           notesarray
         }
-
+        
       </div>
     </div>
   )
