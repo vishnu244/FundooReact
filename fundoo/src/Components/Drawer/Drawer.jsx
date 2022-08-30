@@ -16,6 +16,8 @@ import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import ArchiveOutlinedIcon from '@mui/icons-material/ArchiveOutlined';
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 
+import {connect} from 'react-redux';
+
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
@@ -85,7 +87,9 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
     }),
 );
 
-export default function MiniDrawer(props) {
+
+
+export function MiniDrawer(props) {
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
 
@@ -97,6 +101,22 @@ export default function MiniDrawer(props) {
         setOpen(false);
     };
 
+
+    const handleNotes = () => {
+        props.dispatch({type : "SET_Title_as_Notes"})
+    }
+    const handleReminders = () => {
+        props.dispatch({type : "SET_Title_as_Reminder"})
+    }
+    const handleEditLabels = () => {
+        props.dispatch({type : "SET_Title_as_EditLabels"})
+    }
+    const handleArchive = () => {
+        props.dispatch({type : "SET_Title_as_Archive"})
+    }
+    const handleTrash = () => {
+        props.dispatch({type : "SET_Title_as_Trash"})
+    }
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
@@ -104,31 +124,31 @@ export default function MiniDrawer(props) {
             <Drawer variant="permanent" open={props.drawer}>
 
                 <List>
-                    <ListItem button >
+                    <ListItem button onClick={handleNotes}>
                         <ListItemIcon>
                             <LightbulbOutlinedIcon  style={{ cursor: "pointer" }} />
                         </ListItemIcon>
                         <ListItemText primary="Notes" />
                     </ListItem>
-                    <ListItem button >
+                    <ListItem button onClick={handleReminders}>
                         <ListItemIcon>
                             <NotificationsNoneIcon style={{ cursor: "pointer" }}/>
                         </ListItemIcon>
                         <ListItemText primary="Reminders" />
                     </ListItem>
-                    <ListItem button >
+                    <ListItem button onClick={handleEditLabels}>
                         <ListItemIcon>
                             <EditOutlinedIcon style={{ cursor: "pointer" }}/>
                         </ListItemIcon>
                         <ListItemText primary="Edit Labels" />
                     </ListItem>
-                    <ListItem button >
+                    <ListItem button onClick={handleArchive} >
                         <ListItemIcon>
                             <ArchiveOutlinedIcon style={{ cursor: "pointer" }}/>
                         </ListItemIcon>
                         <ListItemText primary="Archive" />
                     </ListItem>
-                    <ListItem button >
+                    <ListItem button onClick={handleTrash}>
                         <ListItemIcon>
                             <DeleteOutlineOutlinedIcon style={{ cursor: "pointer" }}/>
                         </ListItemIcon>
@@ -141,3 +161,6 @@ export default function MiniDrawer(props) {
         </Box>
     );
 }
+
+
+export default connect()(MiniDrawer);
