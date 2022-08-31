@@ -13,9 +13,9 @@ function TakeNote1(props) {
                     <input type="text" placeholder="Take a note..."  ></input>
                 </div>
                 <div class="Note1icon">
-                    <CheckBoxOutlinedIcon style={{ width: "33px", height: "33px", color: "grey" }} />
-                    <BrushOutlinedIcon style={{ width: "33px", height: "33px", color: "grey" }} />
-                    <ImageOutlinedIcon style={{ width: "33px", height: "33px", color: "grey" }} />
+                    <CheckBoxOutlinedIcon style={{ width: "33px", height: "33px", color: "grey", cursor: "pointer" }} />
+                    <BrushOutlinedIcon style={{ width: "33px", height: "33px", color: "grey",cursor: "pointer" }} />
+                    <ImageOutlinedIcon style={{ width: "33px", height: "33px", color: "grey", cursor: "pointer" }} />
                 </div>
 
             </div>

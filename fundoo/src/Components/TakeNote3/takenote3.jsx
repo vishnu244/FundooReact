@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './takenote3.css'
 import ColorPopper from '../ColorPopper/ColorPopper';
 
@@ -15,6 +15,7 @@ import { archiveNotes } from '../../Services/DataService';
 
 function TakeNote3(props) {
 
+    const [viewNote, setViewNote] = useState(true)
 
     const updateArchive = () => {
         let data = { 
@@ -28,22 +29,36 @@ function TakeNote3(props) {
         })
     }
     
+    if(viewNote)
+    {
+        return (
+            <div >
+                <div class="Note3Container" onMouseEnter={ () => setViewNote(false)} style = {{backgroundColor : props.note.color}}>
+                    <div class="Note3Title">
+                        <div>
+                            {props.note.title}
+                        </div>
+                        <PushPinOutlinedIcon style={{ cursor: "pointer" }} />
+                    </div>
+                    <div class="Note3Text">
+                            {props.note.description}                        
+                    </div>
+                    </div>
+                    </div>
+        )
+    }
+    else
+    {
 
-    // const ListenToPopper = (color) => {
-    //     setNoteObj((prevState) => ({ ...prevState, color: color}));
-    
-    //   }
-
-
+        
     return (
         <div >
-            <div class="Note3Container" style = {{backgroundColor : props.note.color}}>
+            <div class="Note3Container" onMouseLeave={ () => setViewNote(true)} style = {{backgroundColor : props.note.color}}>
                 <div class="Note3Title">
-                {/* <div style={{border:"1px solid black", height:"100%" ,width:"70%",display:"flex",justifyContent:"flex-start", alignItems:"center"}}> */}
                     <div>
                         {props.note.title}
                     </div>
-                    <PushPinOutlinedIcon  />
+                    <PushPinOutlinedIcon style={{ cursor: "pointer" }} />
                 </div>
                 <div class="Note3Text">
                         {props.note.description}                        
@@ -59,6 +74,9 @@ function TakeNote3(props) {
             </div>
         </div>
     )
+    }
+
+
 }
 
 export default TakeNote3

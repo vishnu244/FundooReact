@@ -25,9 +25,8 @@
 }
 
 .keeptext {
-    font-size: x-large;
+    font-size: large;
     color: rgb(105, 97, 97);
-
 }
 
 .icon2 {
@@ -71,16 +70,24 @@
     align-items: center;
 }
 
-@media screen and (min-width: 320px) and (max-width: 480px) {
-    .srh {
-        width: '5%',
 
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    .icon2 input {
+        display: none;
+    }
+    .keeptext {
+        font-size: small;    
+    }
+    .ABC{
+        size: large;
     }
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
-    .srh {
-        width: '5%',
-
+    .icon2 input {
+        display: none;
+    }
+    .keeptext {
+        font-size: large;    
     }
 }
