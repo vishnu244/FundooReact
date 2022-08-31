@@ -93,13 +93,13 @@ export function MiniDrawer(props) {
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
 
-    const handleDrawerOpen = () => {
-        setOpen(true);
-    };
+    // const handleDrawerOpen = () => {
+    //     setOpen(true);
+    // };
 
-    const handleDrawerClose = () => {
-        setOpen(false);
-    };
+    // const handleDrawerClose = () => {
+    //     setOpen(false);
+    // };
 
 
     const handleNotes = () => {
@@ -118,7 +118,7 @@ export function MiniDrawer(props) {
         props.dispatch({type : "SET_Title_as_Trash"})
     }
     return (
-        <Box sx={{ display: 'flex' }}>
+        <Box sx={{ display: 'flex' }} >
             <CssBaseline />
 
             <Drawer variant="permanent" open={props.drawer}>

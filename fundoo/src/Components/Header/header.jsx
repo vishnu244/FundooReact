@@ -23,22 +23,22 @@ function Header(props) {
         <div >
             <div class='headerContainer'>
                 <div class='icon1'>
-                    <div><DehazeOutlinedIcon onClick={handleDrawer} /> </div>
+                    <div><DehazeOutlinedIcon  style={{ cursor: "pointer" }} onClick={handleDrawer} /> </div>
                     <img src={keepheader} style={{ width: "33px", height: "33px", flexDirection: "row" }} />
                     <div class="keeptext">{props.title}</div>
                 </div>
                 <div class='icon2'>
-                    <SearchIcon />
+                    <SearchIcon style={{ cursor: "pointer" }} />
                     <input type="text" placeholder="Search..."  ></input>
-                    <Clear />
+                    <Clear style={{ cursor: "pointer" }} />
                 </div>
                 <div class='icon3'>
-                    <RefreshIcon style={{ width: "33px", height: "33px", flexDirection: "row" }} />
-                    <SettingsOutlinedIcon style={{ width: "33px", height: "33px", flexDirection: "row" }} />
+                    <RefreshIcon class="Icon" style={{ width: "33px", height: "33px", flexDirection: "row", cursor: "pointer" }} />
+                    <SettingsOutlinedIcon class="Icon" style={{ width: "33px", height: "33px", flexDirection: "row",cursor: "pointer" }} />
                 </div>
                 <div class='icon4'>
-                    <AppsRoundedIcon style={{ width: "33px", height: "33px", flexDirection: "row" }} />
-                    <AccountCircleIcon style={{ width: "33px", height: "33px", flexDirection: "row" }} />
+                    <AppsRoundedIcon class="Icon" style={{ width: "33px", height: "33px", flexDirection: "row", cursor: "pointer" }} />
+                    <AccountCircleIcon class="Icon" style={{ width: "33px", height: "33px", flexDirection: "row", cursor: "pointer" }} />
                 </div>
             </div>
         </div>
