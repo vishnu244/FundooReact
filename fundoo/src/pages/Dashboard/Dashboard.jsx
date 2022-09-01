@@ -12,25 +12,57 @@ function Dashboard() {
   const [view, setview] = useState(true)
   const [notes, setNotes] = useState([])
   const [drawer, setDrawer] = useState(false)
-
+  const [currentNotes, setCurrentNotes] = useState("Notes")
   const notesarray = notes.map(note => (<TakeNote3 note={note} />))
 
   useEffect(() => {
-    getNotes().then((response) => { console.log(response); setNotes(response.data.success) })
-  }, [])
+    getNotes().then((response) => {
+      console.log(response)
+      let filterArray = response.data.success.filter((note) => {
+        if (currentNotes == "Notes") {
+          if (note.archive == false && note.Trash == false) {
+            return note
+          }
+        }
+        if (currentNotes == "Archive") {
+          if (note.archive == true && note.Trash == false) {
+            return note
+          }
+        }
+        if (currentNotes == "Trash") {
+          if (note.archive == false && note.Trash == true) {
+            return note
+          }
+        }
+      })
+      {
+        console.log(response);
+        // setNotes(response.data.success) 
+        setNotes(filterArray)
+      }
+    })
+    .catch(error => {console.log(error)})
+  }, [currentNotes])
 
   function listenToTakeNote1() {
     setview(false)
   }
 
   const listenToHeader = () => {
-    setDrawer (!drawer)
+    setDrawer(!drawer)
   }
+
+  const listenToDrawer = (data) => {
+    setCurrentNotes(data)
+    // console.log(data)
+  }
+
+
 
   return (
     <div>
-      <Header listenToHeader= {listenToHeader} />
-      <MiniDrawer  drawer = {drawer}/>
+      <Header listenToHeader={listenToHeader} />
+      <MiniDrawer drawer={drawer} listenToDrawer={listenToDrawer} />
       {
         view ? <TakeNote1 listenToTakeNote1={listenToTakeNote1} /> : <TakeNote2 />
       }
@@ -38,7 +70,7 @@ function Dashboard() {
         {
           notesarray
         }
-        
+
       </div>
     </div>
   )

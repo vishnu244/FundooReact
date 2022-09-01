@@ -104,6 +104,7 @@ export function MiniDrawer(props) {
 
     const handleNotes = () => {
         props.dispatch({type : "SET_Title_as_Notes"})
+        props.listenToDrawer("Notes")
     }
     const handleReminders = () => {
         props.dispatch({type : "SET_Title_as_Reminder"})
@@ -113,9 +114,11 @@ export function MiniDrawer(props) {
     }
     const handleArchive = () => {
         props.dispatch({type : "SET_Title_as_Archive"})
+        props.listenToDrawer("Archive")
     }
     const handleTrash = () => {
         props.dispatch({type : "SET_Title_as_Trash"})
+        props.listenToDrawer("Trash")
     }
     return (
         <Box sx={{ display: 'flex' }} >

@@ -16,6 +16,11 @@ export const addColor = (colorNotesObj) => {
     return response;
 }
 
+export const addTrash = (trashNotesObj) => {
+    let response = axios.post('http://127.0.0.1:8000/api/TrashNotesById', trashNotesObj, header);
+    return response;
+}
+
 export const addNote = (takeNote2Obj) => {
     let response = axios.post('http://127.0.0.1:8000/api/Notes', takeNote2Obj, header);
     return response;
