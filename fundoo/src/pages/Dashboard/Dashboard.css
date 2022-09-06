@@ -1,8 +1,7 @@
 .NotesArray{
     /* border: 1px solid black; */
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    justify-content: flex-start;
     width: 80vw;
     flex-flow: row wrap;
     gap: 2rem;
