@@ -6,7 +6,6 @@ import MuiAppBar from '@mui/material/AppBar';
 import List from '@mui/material/List';
 import CssBaseline from '@mui/material/CssBaseline';
 import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 
@@ -16,7 +15,7 @@ import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import ArchiveOutlinedIcon from '@mui/icons-material/ArchiveOutlined';
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 const drawerWidth = 240;
 
@@ -89,75 +88,67 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 
 
+
 export function MiniDrawer(props) {
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
 
-    // const handleDrawerOpen = () => {
-    //     setOpen(true);
-    // };
-
-    // const handleDrawerClose = () => {
-    //     setOpen(false);
-    // };
-
-
     const handleNotes = () => {
-        props.dispatch({type : "SET_Title_as_Notes"})
+        props.dispatch({ type: "SET_Title_as_Notes" })
+        props.listenToDrawer("Notes")
     }
     const handleReminders = () => {
-        props.dispatch({type : "SET_Title_as_Reminder"})
+        props.dispatch({ type: "SET_Title_as_Reminder" })
     }
     const handleEditLabels = () => {
-        props.dispatch({type : "SET_Title_as_EditLabels"})
+        props.dispatch({ type: "SET_Title_as_EditLabels" })
     }
     const handleArchive = () => {
-        props.dispatch({type : "SET_Title_as_Archive"})
+        props.dispatch({ type: "SET_Title_as_Archive" })
+        props.listenToDrawer("Archive")
     }
     const handleTrash = () => {
-        props.dispatch({type : "SET_Title_as_Trash"})
+        props.dispatch({ type: "SET_Title_as_Trash" })
+        props.listenToDrawer("Trash")
     }
+
     return (
         <Box sx={{ display: 'flex' }} >
             <CssBaseline />
-
-            <Drawer variant="permanent" open={props.drawer}>
-
+            <Drawer variant="permanent" open={props.drawer} >
                 <List>
-                    <ListItem button onClick={handleNotes}>
+                    <ListItem button onClick={handleNotes} >
                         <ListItemIcon>
-                            <LightbulbOutlinedIcon  style={{ cursor: "pointer" }} />
+                            <LightbulbOutlinedIcon style={{ cursor: "pointer" }} />
                         </ListItemIcon>
                         <ListItemText primary="Notes" />
                     </ListItem>
                     <ListItem button onClick={handleReminders}>
                         <ListItemIcon>
-                            <NotificationsNoneIcon style={{ cursor: "pointer" }}/>
+                            <NotificationsNoneIcon style={{ cursor: "pointer" }} />
                         </ListItemIcon>
                         <ListItemText primary="Reminders" />
                     </ListItem>
                     <ListItem button onClick={handleEditLabels}>
                         <ListItemIcon>
-                            <EditOutlinedIcon style={{ cursor: "pointer" }}/>
+                            <EditOutlinedIcon style={{ cursor: "pointer" }} />
                         </ListItemIcon>
                         <ListItemText primary="Edit Labels" />
                     </ListItem>
                     <ListItem button onClick={handleArchive} >
                         <ListItemIcon>
-                            <ArchiveOutlinedIcon style={{ cursor: "pointer" }}/>
+                            <ArchiveOutlinedIcon style={{ cursor: "pointer" }} />
                         </ListItemIcon>
                         <ListItemText primary="Archive" />
                     </ListItem>
                     <ListItem button onClick={handleTrash}>
                         <ListItemIcon>
-                            <DeleteOutlineOutlinedIcon style={{ cursor: "pointer" }}/>
+                            <DeleteOutlineOutlinedIcon style={{ cursor: "pointer" }} />
                         </ListItemIcon>
                         <ListItemText primary="Trash" />
                     </ListItem>
-
                 </List>
             </Drawer>
-
         </Box>
     );
 }

@@ -21,9 +21,7 @@ export default function ColorPopper(props) {
             let data = {id : props.id, color:color}
             addColor(data).then((response) => {console.log(response)})
             .catch ((error) => console.log(error))
-
         }
-
     }
 
     const open = Boolean(anchorEl);

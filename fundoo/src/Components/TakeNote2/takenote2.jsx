@@ -12,7 +12,7 @@ import RedoRoundedIcon from '@mui/icons-material/RedoRounded';
 import PushPinOutlinedIcon from '@mui/icons-material/PushPinOutlined';
 import { addNote } from '../../Services/DataService';
 
-function TakeNote2() {
+function TakeNote2(props) {
   const [ noteObj,  setNoteObj ] = React.useState({Title:" ", Description:" ",color:" ", archive:false})
   const takeTitle = (event) => {
     setNoteObj((prevState) => ({ ...prevState, Title: event.target.value }));
@@ -26,9 +26,13 @@ function TakeNote2() {
     setNoteObj((prevState) => ({ ...prevState, color: color}));
 
   }
-  const onclose = async () => {
-    let response = await addNote(noteObj);
+  
+  const onClose = async () => {
+     let response = await addNote(noteObj);
     console.log(response)
+    // addNote(noteObj).then((response) => {console.log(response)}).catch((error)=>{console.log(error)}) //------------
+    //  addNote(noteObj).then(() => props.listenToTakeNote2(false)).catch(()=>{props.listenToTakeNote2(false)}) //------------
+
   }
 
   const handleArchhive = () => {
@@ -57,7 +61,7 @@ function TakeNote2() {
             <RedoRoundedIcon style={{ cursor: "pointer" }} />
           </div>
           <div className="close" >
-            <button onClick={onclose} style = {{backgroundColor : noteObj.color}}>close</button>
+            <button onClick={onClose} style = {{backgroundColor : noteObj.color}}>close</button>
           </div>
         </div>
       </div>
